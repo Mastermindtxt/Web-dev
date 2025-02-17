@@ -40,3 +40,7 @@ document.getElementById("login-form").addEventListener("submit", function(e) {
 if (!sessionStorage.getItem("loggedIn")) {
   window.location.href = "login.html";
 }
+// Dark Mode Toggle
+document.getElementById("dark-mode-toggle").addEventListener("change", function() {
+  document.body.classList.toggle("dark-mode");
+});
