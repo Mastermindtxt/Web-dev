@@ -2,45 +2,32 @@
 const loginForm = document.getElementById('login-form');
 const errorMessage = document.getElementById('error-message');
 
-// Hardcoded credentials (for demonstration purposes only)
-const validUsername = "admin";
-const validPassword = "password123";
+// Hardcoded credentials (for demonstration only)
+const validCredentials = {
+  username: "admin",
+  password: "password123"
+};
 
+// Single login handler
 loginForm.addEventListener('submit', (e) => {
-  e.preventDefault(); // Prevent form submission
-
-  const username = document.getElementById('username').value;
-  const password = document.getElementById('password').value;
-
-  if (username === validUsername && password === validPassword) {
-    // Redirect to the secret page
-    window.location.href = "secret.html";
-  } else {
-    // Show error message
-    errorMessage.textContent = "Invalid username or password.";
-    errorMessage.style.display = "block";
-  }
-});
-
-// Login Validation
-document.getElementById("login-form").addEventListener("submit", function(e) {
   e.preventDefault();
-  const username = document.getElementById("username").value;
-  const password = document.getElementById("password").value;
 
-  if (username === "admin" && password === "password123") {
-    sessionStorage.setItem("loggedIn", "true"); // Store login state
+  const username = document.getElementById('username').value.trim();
+  const password = document.getElementById('password').value.trim();
+
+  if (username === validCredentials.username && password === validCredentials.password) {
+    sessionStorage.setItem("loggedIn", "true");
     window.location.href = "secret.html";
   } else {
-    alert("Invalid username or password!");
+    errorMessage.textContent = "Invalid username or password!";
+    errorMessage.style.display = "block";
+    setTimeout(() => {
+      errorMessage.style.display = "none";
+    }, 3000);
   }
 });
 
-// Protect Secret Page (Add this to secret.html)
-if (!sessionStorage.getItem("loggedIn")) {
-  window.location.href = "login.html";
-}
 // Dark Mode Toggle
-document.getElementById("dark-mode-toggle").addEventListener("change", function() {
+document.getElementById("dark-mode-toggle")?.addEventListener("change", function() {
   document.body.classList.toggle("dark-mode");
 });
