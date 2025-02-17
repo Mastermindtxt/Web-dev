@@ -21,3 +21,22 @@ loginForm.addEventListener('submit', (e) => {
     errorMessage.style.display = "block";
   }
 });
+
+// Login Validation
+document.getElementById("login-form").addEventListener("submit", function(e) {
+  e.preventDefault();
+  const username = document.getElementById("username").value;
+  const password = document.getElementById("password").value;
+
+  if (username === "admin" && password === "password123") {
+    sessionStorage.setItem("loggedIn", "true"); // Store login state
+    window.location.href = "secret.html";
+  } else {
+    alert("Invalid username or password!");
+  }
+});
+
+// Protect Secret Page (Add this to secret.html)
+if (!sessionStorage.getItem("loggedIn")) {
+  window.location.href = "login.html";
+}
