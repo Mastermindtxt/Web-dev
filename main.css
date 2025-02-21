@@ -1,0 +1,363 @@
+/* ======================
+   Global Styles 
+   ====================== */
+   
+:root {
+    --main-purple: rgba(64, 0, 64, 0.95);
+    --glow-effect: 0 0 35px rgba(128, 0, 128, 0.6);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #f0f0f0;
+    background-image: url("media/background.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* ======================
+   Header Section 
+   ====================== */
+
+header {
+    position: relative;
+    padding: 10vh 5vw;
+    background-image: url('media/boy.jpg');
+    background-size: cover;
+    background-position: center;
+    box-shadow: var(--glow-effect);
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.header-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header h1 {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  color: #e0e0e0;
+  text-shadow: 0 0 20px rgba(0, 0, 0, 1);
+  font-weight: 700; /* Bold weight for Metropolis */
+}
+
+/* Tagline with Cormorant */
+.tagline {
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  color: #e0e0e0;
+  margin-top: 1.5rem;
+  text-shadow: 0 0 20px rgba(0, 0, 0, 1);
+  font-weight: 500;
+  font-style: italic;
+}
+
+/* ======================
+   About Section 
+   ====================== */
+   
+/* About Section */
+#about {
+    background: rgba(48, 0, 48, 0.95);
+    border-radius: 15px;
+    box-shadow: 0 0 35px rgba(128, 0, 128, 0.6);
+    animation: section-glow 1s ease-in-out infinite;
+    padding: 4vw;
+    margin: 3vw;
+}
+
+.about-content {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.profile-photo {
+    flex: 0 0 35%;
+    border-radius: 12px;
+    height: 300px;
+    object-fit: cover;
+    opacity: 0.8;
+    box-shadow: 4px 0 20px rgba(114,11,213,1);
+    position: relative;
+}
+
+/* Photo Glow Effect */
+.profile-photo::after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border-radius: 15px;
+    animation: photo-glow 2.5s ease-in-out infinite;
+    box-shadow: 0 0 25px rgba(128, 0, 128, 0.6);
+}
+
+.about-text {
+    flex: 1;
+    padding: 1rem;
+    color: #fff; /* Peach color */
+    position: relative;
+}
+
+/* Text Background Glow */
+.about-text::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: linear-gradient(45deg, 
+        rgba(128, 0, 128, 0.3) 0%, 
+        rgba(128, 0, 128, 0.15) 100%);
+    z-index: -1;
+    border-radius: 15px;
+    filter: blur(12px);
+}
+
+.about-text h5 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+/* Custom Bullet Points */
+.about-text p::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: rgba(255, 229, 180, 0.8);
+    font-size: 1.4rem;
+    top: -2px;
+}
+
+/* Animations */
+@keyframes section-glow {
+    0% { box-shadow: 0 0 35px rgba(128, 0, 128, 0.6); }
+    50% { box-shadow: 0 0 45px rgba(128, 0, 128, 0.8); }
+    100% { box-shadow: 0 0 35px rgba(128, 0, 128, 0.6); }
+}
+
+@keyframes photo-glow {
+    0% { opacity: 0.8; }
+    50% { opacity: 1; }
+    100% { opacity: 0.8; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+    }
+    
+    .profile-photo {
+        width: 100%;
+        height: 250px;
+        flex: none;
+    }
+    
+    .about-text::before {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+    
+    .about-text p {
+        padding-left: 1rem;
+    }
+}
+
+/* ======================
+   Photo Section 
+   ====================== */
+
+#photos {
+    padding: 4vw;
+    margin: 3vw;
+    background: var(--main-purple);
+    border-radius: 15px;
+    backdrop-filter: blur(8px);
+    box-shadow: var(--glow-effect);
+}
+
+.photos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px));
+    gap: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    margin-right: 1rem;
+}
+
+.photo-box {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 15px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    aspect-ratio: 1/1;
+}
+
+.photo-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(252,7,252,0.614);
+}
+
+.photo-box img {
+    width: 100%;
+    height: 70%;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid #ffffff40;
+}
+
+.photo-box p {
+    margin-top: 1rem;
+    font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+    color: #ffffffdd;
+}
+
+/* ======================
+   Projects Section 
+   ====================== */
+
+#projects {
+    padding: 4vw;
+    margin: 3vw;
+    background: var(--main-purple);
+    border-radius: 15px;
+    backdrop-filter: blur(8px);
+    box-shadow: var(--glow-effect);
+}
+
+.scroll-container {
+    display: flex;
+    gap: 2rem;
+    overflow-x: auto;
+    padding: 1rem 0;
+}
+
+.scroll-container img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid #ffffff40;
+}
+
+/* ======================
+   Tech Stack Section 
+   ====================== */
+
+#tech-stacks {
+    padding: 4vw;
+    margin: 3vw;
+    background: var(--main-purple);
+    border-radius: 15px;
+    backdrop-filter: blur(8px);
+    box-shadow: var(--glow-effect);
+}
+
+/* ======================
+   GitHub Section 
+   ====================== */
+
+#github {
+    padding: 4vw;
+    margin: 3vw;
+    background: var(--main-purple);
+    border-radius: 15px;
+    backdrop-filter: blur(8px);
+    box-shadow: var(--glow-effect);
+}
+
+.github-content {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.github-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 10px;
+    object-fit: cover;
+    border: 2px solid #ffffff40;
+}
+
+/* ======================
+   Footer 
+   ====================== */
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    margin-top: 4rem;
+    background: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(8px);
+}
+
+/* ======================
+   Mobile Responsiveness 
+   ====================== */
+
+@media (max-width: 767px) {
+    .profile-photo {
+        width: 100%;
+        max-width: none;
+        height: 250px;
+    }
+    
+    .photos-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .photo-box {
+        width: 100%;
+        height: auto;
+    }
+    
+    .github-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (min-width: 1200px) {
+    body {
+        font-size: 1.1rem;
+    }
+  }
