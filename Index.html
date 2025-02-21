@@ -1,198 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Personal Website</title>
+    <link rel="stylesheet" href="main.css">
+    <link href="fonts/HumaneReguler.woff" rel="stylesheet">
 </head>
-
 <body>
-  <!-- Header -->
-  <header>
-    <nav>
-      <div class="logo">My Portfolio</div>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="login.html">Login</a></li>
-      </ul>
-      <div class="theme-toggle">
-        <input type="checkbox" id="dark-mode-toggle">
-        <label for="dark-mode-toggle" class="toggle-label"></label>
-      </div>
-    </nav>
-  </header>
-  <script>
-    // Dark Mode Toggle
-    const darkModeToggle = document.getElementById('dark-mode-toggle');
-    const body = document.body;
-  
-    darkModeToggle.addEventListener('change', () => {
-      body.classList.toggle('dark-mode');
-    });
-  </script>
-  <!-- Hero Section -->
-  <section id="home" class="hero">
-    <div class="hero-content">
-      <h1>Welcome to My Portfolio</h1>
-      <p>I'm a creative designer and developer.</p>
-      <a href="#about" class="btn">Learn More</a>
-    </div>
-  </section>
-
-
-    <!-- About Section -->
-  <section id="about" class="about">
-    <h2>About Me</h2>
-    <p>Hi, I'm John Doe, a passionate web developer with a love for creating beautiful and functional websites. I specialize in front-end development and UI/UX design.</p>
-    <a href="path/to/your/resume.pdf" download class="btn">Download Resume</a>
-  </section>
-
-  <!-- Projects Section -->
-  <section id="projects" class="projects">
-    <h2>My Projects</h2>
-    <div class="project-grid">
-      <div class="project-card">
-        <img src="https://via.placeholder.com/400x300" alt="Project 1">
-        <h3>Project 1</h3>
-        <p>A modern e-commerce website.</p>
-        <a href="#" class="btn">View Project</a>
-      </div>
-      <div class="project-card">
-        <img src="https://via.placeholder.com/400x300" alt="Project 2">
-        <h3>Project 2</h3>
-        <p>A portfolio website for a photographer.</p>
-        <a href="#" class="btn">View Project</a>
-      </div>
-      <div class="project-card">
-        <img src="https://via.placeholder.com/400x300" alt="Project 3">
-        <h3>Project 3</h3>
-        <p>A blog platform with a clean design.</p>
-        <a href="#" class="btn">View Project</a>
-      </div>
-    </div>
-  </section>
-  <!-- Skills Section -->
-  <section id="skills" class="skills">
-    <h2>My Skills</h2>
-    <div class="skills-grid">
-      <div class="skill">
-        <h3>HTML</h3>
-        <div class="skill-bar">
-          <div class="skill-level" style="width: 95%;"></div>
+    <!-- Header Section with Background Photo -->
+    <header>
+        <div class="header-content">
+            <h1>MastermindTXT</h1>
+            <p class="tagline">Web Developer | Designer | Shell Developer</p>
         </div>
-      </div>
-      <div class="skill">
-        <h3>CSS</h3>
-        <div class="skill-bar">
-          <div class="skill-level" style="width: 90%;"></div>
-        </div>
-      </div>
-      <div class="skill">
-        <h3>JavaScript</h3>
-        <div class="skill-bar">
-          <div class="skill-level" style="width: 80%;"></div>
-        </div>
-      </div>
-      <div class="skill">
-        <h3>UI/UX Design</h3>
-        <div class="skill-bar">
-          <div class="skill-level" style="width: 85%;"></div>
-        </div>
-      </div>
-    </div>
-  </section>
-  
-    <!-- Testimonials Section -->
-  <section id="testimonials" class="testimonials">
-    <h2>What People Say</h2>
-    <div class="testimonials-grid">
-      <div class="testimonial-card">
-        <p>"John is an incredible developer! He delivered my project on time and exceeded my expectations."</p>
-        <h3>- Jane Doe</h3>
-        <p>CEO, Company XYZ</p>
-      </div>
-      <div class="testimonial-card">
-        <p>"Working with John was a pleasure. His attention to detail and creativity are unmatched."</p>
-        <h3>- John Smith</h3>
-        <p>Founder, Startup ABC</p>
-      </div>
-      <div class="testimonial-card">
-        <p>"John transformed our website into a modern, user-friendly platform. Highly recommend!"</p>
-        <h3>- Sarah Lee</h3>
-        <p>Marketing Manager, Brand X</p>
-      </div>
-    </div>
-  </section>
-  <!-- Blog Section -->
-  <section id="blog" class="blog">
-    <h2>My Blog</h2>
-    <div class="blog-grid">
-      <div class="blog-card">
-        <h3>10 Tips for Better UI/UX Design</h3>
-        <p>Learn how to create user-friendly designs that stand out.</p>
-        <a href="#" class="btn">Read More</a>
-      </div>
-      <div class="blog-card">
-        <h3>Getting Started with JavaScript</h3>
-        <p>A beginner's guide to mastering JavaScript fundamentals.</p>
-        <a href="#" class="btn">Read More</a>
-      </div>
-      <div class="blog-card">
-        <h3>Why Responsive Design Matters</h3>
-        <p>Discover the importance of responsive web design in 2023.</p>
-        <a href="#" class="btn">Read More</a>
-      </div>
-    </div>
-  </section>
-  <!-- Contact Section -->
-  <section id="contact" class="contact">
-    <h2>Contact Me</h2>
-    <form>
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
-  <!-- Back to Top Button -->
-  <button id="back-to-top" title="Go to top">↑</button>
-  <!-- Footer -->
-  <footer>
-    <div class="footer-content">
-      <p>&copy; 2023 My Portfolio. All rights reserved.</p>
-      <ul class="footer-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <div class="social-links">
-        <a href="https://github.com" target="_blank">GitHub</a>
-        <a href="https://linkedin.com" target="_blank">LinkedIn</a>
-        <a href="https://twitter.com" target="_blank">Twitter</a>
-      </div>
-    </div>
-  </footer>
-<script>
-  // Back to Top Button
-  const backToTopButton = document.getElementById('back-to-top');
+    </header>
 
-  window.onscroll = () => {
-    if (document.body.scrollTop > 200 || document.documentElement.scrollTop >  500) {
-      backToTopButton.style.display = 'block';
-    } else {
-      backToTopButton.style.display = 'none';
-    }
-  };
+    <!-- About Me Section -->
+    <section id="about">
+        <div class="about-content">
+            <img src="media/my.jpg" alt="my Photo" class="profile-photo">
+            <div class="about-text">
+                <h5>My Self</h5>
+                <p><strong>Age:</strong> 17</p>
+                <p><strong>Profession:</strong> developer</p>
+                <p>My self : Tanishq Saxena, I am a software and web developer, </p>
+            </div>
+        </div>
+    </section>
 
-  backToTopButton.onclick = () => {
-    document.body.scrollTop = 0; 
-    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
-  };
-</script>
+    <!-- Photo 1 and Photo 2 Section -->
+    <section id="photos">
+        <div class="photos-container">
+            <div class="photo-box">
+                <img src="media/sylphie.jpg" alt="Photo 1">
+                <p><B>Sylphiette</B> : A telegram bot which can hendel groups and Admins.</p>
+            </div>
+            <div class="photo-box">
+                <img src="media/roxy1.jpg" alt="Photo 2">
+                <p><b>Roxy :</b> An advance telegram bot who can manage group creat flashable ksu and magisk modules.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>My Projects</h2>
+        <div class="scroll-container">
+            <img src="project1.jpg" alt="Project 1">
+            <img src="project2.jpg" alt="Project 2">
+            <img src="project3.jpg" alt="Project 3">
+            <!-- Add more project images as needed -->
+        </div>
+    </section>
+
+    <!-- Tech Stacks Section -->
+    <section id="tech-stacks">
+        <h2>Tech Stacks</h2>
+        <div class="scroll-container">
+            <img src="html-logo.png" alt="HTML">
+            <img src="css-logo.png" alt="CSS">
+            <img src="js-logo.png" alt="JavaScript">
+            <img src="react-logo.png" alt="React">
+            <!-- Add more tech stack logos as needed -->
+        </div>
+    </section>
+
+    <!-- GitHub Profile Section -->
+    <section id="github">
+        <div class="github-content">
+            <img src="github-profile.jpg" alt="GitHub Profile" class="github-photo">
+            <div class="github-text">
+                <h2>GitHub Profile</h2>
+                <p>Check out my GitHub profile!</p>
+                <button onclick="window.location.href='https://github.com/yourusername'">Visit My GitHub</button>
+                <p class="small-text">X visits</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 Your Name. All rights reserved.</p>
+    </footer>
 </body>
 </html>
