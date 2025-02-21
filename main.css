@@ -93,6 +93,12 @@ header h1 {
     align-items: flex-start;
 }
 
+.profile-photo:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(252,7,252,0.614);
+    
+}
+
 .profile-photo {
     flex: 0 0 35%;
     border-radius: 12px;
@@ -207,7 +213,7 @@ header h1 {
 #photos {
     padding: 4vw;
     margin: 3vw;
-    background: var(--main-purple);
+    background: rgba(48, 0, 48, 0.95);
     border-radius: 15px;
     backdrop-filter: blur(8px);
     box-shadow: var(--glow-effect);
@@ -253,28 +259,131 @@ header h1 {
    Projects Section 
    ====================== */
 
+/* Projects Section - No Horizontal Scroll */
 #projects {
     padding: 4vw;
     margin: 3vw;
-    background: var(--main-purple);
+    background: rgba(48, 0, 48, 0.95);
     border-radius: 15px;
-    backdrop-filter: blur(8px);
-    box-shadow: var(--glow-effect);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 35px rgba(128, 0, 128, 0.6);
 }
 
-.scroll-container {
-    display: flex;
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
-    overflow-x: auto;
-    padding: 1rem 0;
+    padding: 1rem 0.5rem;
 }
 
-.scroll-container img {
-    width: 250px;
-    height: 250px;
+.project-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.project-image {
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    border-radius: 10px;
-    border: 2px solid #ffffff40;
+    transition: transform 0.3s ease;
+}
+
+.project-content {
+    padding: 10rem;
+    position: relative;
+}
+
+.project-title {
+    color: #FFE5B4;
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+}
+
+.project-description {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1rem;
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .project-card {
+        width: 100%;
+        margin: 0 auto;
+    }
+    
+    .project-image {
+        height: 180px;
+    }
+    
+    .project-content {
+        padding: 1.2rem;
+    }
+    
+    .project-title {
+        font-size: 1.2rem;
+    }
+    
+    .project-description {
+        font-size: 0.9rem;
+    }
+}
+
+/* Hover Effects for Desktop Only */
+@media (hover: hover) {
+    .project-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(252,7,252,0.614);
+    }
+    
+    .project-card:hover {
+        transform: scale(1.05);
+    }
+}
+
+.project-link {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    width: 99%;
+    border-radius: 25px;
+    background: rgba(128, 0, 128, 0.3);
+    color: #FFE5B4 !important;
+    text-decoration: none;
+    transition: all 1s ease;
+    border: 2px solid rgba(255, 229, 180, 0.2);
+    backdrop-filter: blur(5px);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.project-link:hover {
+    background: rgba(128, 0, 128, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(128, 0, 128, 0.3);
+    border-color: rgba(255, 229, 180, 0.3);
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+    .project-link {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.9rem;
+    }
 }
 
 /* ======================
@@ -360,4 +469,4 @@ footer {
     body {
         font-size: 1.1rem;
     }
-  }
+       }
