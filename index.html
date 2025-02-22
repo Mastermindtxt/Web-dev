@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tanishq - Personal Website</title>
+    <title>MastermindTXT - Personal Website</title>
     <link rel="stylesheet" href="main.css">
-    <link href="fonts/HumaneReguler.woff" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
     <!-- Header Section with Background Photo -->
@@ -32,7 +32,7 @@
 
     <!-- Photo 1 and Photo 2 Section -->
     <section id="photos">
-        <h2>My Creations</h2>
+        <h2 class="Creations">My Creations</h2>
         <div class="photos-container">
             <div class="photo-box">
                 <img src="media/sylphie.jpg" alt="Photo 1">
@@ -47,7 +47,7 @@
 
     <!-- Projects Section -->
     <section id="projects">
-        <h2>My Projects</h2>
+        <h2 class="project">My Projects</h2>
         <div class="projects-grid">
             <div class="project-card">
                 <div class="project-image">
@@ -66,20 +66,40 @@
             <!-- Repeat for other projects -->
         </div>
     </section>
-
-
-    <!-- Tech Stacks Section -->
+    
+    <!--Tech-stacks section-->
     <section id="tech-stacks">
-        <h2>Tech Stacks</h2>
-        <div class="scroll-container">
-            <img src="html-logo.png" alt="HTML">
-            <img src="css-logo.png" alt="CSS">
-            <img src="js-logo.png" alt="JavaScript">
-            <img src="react-logo.png" alt="React">
-            <!-- Add more tech stack logos as needed -->
+        <h2 class="tech">My Tech-stacks</h2>
+        <div class="tech-container">
+            <div class="tech-collage">
+                <div class="tech-item">
+                    <i class="fas fa-terminal"></i>
+                    <span>Shell Script</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fas fa-code"></i>
+                    <span>Bash Script</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fab fa-python"></i>
+                    <span>Python</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fab fa-html5"></i>
+                    <span>HTML5</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fab fa-css3-alt"></i>
+                    <span>CSS3</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fab fa-js-square"></i>
+                    <span>JavaScript</span>
+                </div>
+            </div>
         </div>
     </section>
-
+    
     <!-- GitHub Profile Section -->
     <section id="github">
         <div class="github-content">
@@ -95,7 +115,7 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2023 Your Name. All rights reserved.</p>
+        <p>&copy; 2023 Mastermindtxt. All rights reserved.</p>
     </footer>
 </body>
 </html>
